@@ -91,13 +91,13 @@ footer{margin-top:24px;font-size:.88rem;color:var(--muted)}
         </fieldset>
 
         <fieldset>
-          <legend>Which topic was most useful for you?</legend>
-          <label class="opt"><input type="radio" name="Most useful topic" value="Clinical trials and phases">Clinical trials and phases</label>
-          <label class="opt"><input type="radio" name="Most useful topic" value="CRF and EDC">CRF and EDC</label>
-          <label class="opt"><input type="radio" name="Most useful topic" value="Queries and data cleaning">Queries and data cleaning</label>
-          <label class="opt"><input type="radio" name="Most useful topic" value="Coding and reconciliation">Coding and reconciliation</label>
-          <label class="opt"><input type="radio" name="Most useful topic" value="Database lock">Database lock</label>
-          <label class="opt"><input type="radio" name="Most useful topic" value="Interview preparation">Interview preparation</label>
+          <legend>Which topics were most useful for you?</legend>           <div class="hint">Tick all that apply.</div>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Clinical trials and phases">Clinical trials and phases</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="CRF and EDC">CRF and EDC</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Queries and data cleaning">Queries and data cleaning</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Coding and reconciliation">Coding and reconciliation</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Database lock">Database lock</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Interview preparation">Interview preparation</label>
         </fieldset>
 
         <fieldset>
@@ -162,7 +162,7 @@ f.addEventListener('submit',async e=>{
   if(!ok){st.textContent='Please fill in the highlighted questions.';return;}
   if(document.getElementById('hp').value) return;
   const data={};
-  new FormData(f).forEach((v,k)=>data[k]=v);
+  new FormData(f).forEach((v,k)=>{ data[k]= data[k] ? data[k]+', '+v : v; });
   data._subject='Feedback: '+data.Rating+'/5 – '+name;
   data._template='table'; data._captcha='false';
   btn.disabled=true; st.textContent='Sending…';
