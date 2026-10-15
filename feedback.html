@@ -163,7 +163,7 @@ f.addEventListener('submit',async e=>{
   if(document.getElementById('hp').value) return;
   const data={};
   new FormData(f).forEach((v,k)=>{ data[k]= data[k] ? data[k]+', '+v : v; });
-  data._subject='Feedback: '+data.Rating+'/5 – '+name;
+  data._subject='Feedback from Batch 1 – '+data.Rating+'/5 – '+name;
   data._template='table'; data._captcha='false';
   btn.disabled=true; st.textContent='Sending…';
   try{
