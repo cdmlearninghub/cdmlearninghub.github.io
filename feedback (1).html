@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Batch Feedback – CDM Learning Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f6f8f9; --surface:#ffffff; --fg:#14232b; --muted:#56666f; --line:#d9e1e5;
+  --ink:#0f5466; --ink-soft:#e3f0f3; --flag:#c7791a; --flag-soft:#fbefdc;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0e171b; --surface:#152228; --fg:#e4ecef; --muted:#9aabb3; --line:#273840;
+  --ink:#6cc3d6; --ink-soft:#173540; --flag:#f0a64a; --flag-soft:#3a2a14; color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 60px max(16px,env(safe-area-inset-left,0px))}
+.brand{font-family:var(--display);font-weight:800;color:var(--fg);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand i{width:10px;height:10px;border-radius:2px;background:var(--ink);display:inline-block}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.15;margin:24px 0 8px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 24px}
+form{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.head{padding:12px 18px;background:var(--ink-soft);font-family:var(--mono);font-size:.78rem;color:var(--ink);border-bottom:1px solid var(--line)}
+.body{padding:20px 18px;display:grid;gap:22px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend,.lbl{font-weight:600;margin-bottom:6px;padding:0}
+legend b,.lbl b{color:var(--flag)}
+.hint{font-size:.9rem;color:var(--muted);margin-top:-4px}
+input[type=text],textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--ink);border-color:var(--ink)}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.opt input{margin-top:5px}
+.opt:has(input:checked){border-color:var(--ink);background:var(--ink-soft)}
+.scale{display:flex;gap:8px;flex-wrap:wrap}
+.scale label{flex:1;min-width:52px;text-align:center;border:1px solid var(--line);border-radius:8px;padding:10px 0;cursor:pointer;font-family:var(--mono)}
+.scale input{position:absolute;opacity:0;pointer-events:none}
+.scale label:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.scale label:has(input:focus-visible){outline:2px solid var(--flag)}
+.ends{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted)}
+.err{color:var(--flag);font-size:.9rem}
+.foot{padding:16px 18px;border-top:1px solid var(--line);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-weight:600;background:var(--ink);color:var(--bg);border:0;border-radius:8px;padding:12px 22px;cursor:pointer}
+button:disabled{opacity:.6}
+.status{font-size:.95rem;color:var(--flag)}
+.thanks{padding:32px 18px;display:grid;gap:10px}
+.thanks h2{font-family:var(--display);color:var(--ink);margin:0}
+.hp{position:absolute;left:-9999px}
+footer{margin-top:24px;font-size:.88rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="./"><i></i>CDM Learning Hub</a>
+  <h1>Batch 1 Feedback</h1>
+  <p class="lead">Thank you for being part of the 4-Week Live Course. Your honest feedback takes about 3 minutes and helps improve future batches.</p>
+
+  <form id="fb" novalidate>
+    <div class="head">FORM: COURSE FEEDBACK · Fields marked * are required</div>
+    <div id="fields">
+      <div class="body">
+        <div>
+          <label class="lbl" for="name">Your name <b>*</b></label>
+          <input type="text" id="name" name="Name" autocomplete="name">
+          <div class="err" id="e-name" hidden>Please enter your name.</div>
+        </div>
+        <div>
+          <label class="lbl" for="bg">Your education background</label>
+          <input type="text" id="bg" name="Background" placeholder="e.g. B.Pharm, M.Sc, Nursing">
+        </div>
+
+        <fieldset>
+          <legend>Overall, how would you rate the course? <b>*</b></legend>
+          <div class="scale" role="radiogroup">
+            <label><input type="radio" name="Rating" value="1">1</label>
+            <label><input type="radio" name="Rating" value="2">2</label>
+            <label><input type="radio" name="Rating" value="3">3</label>
+            <label><input type="radio" name="Rating" value="4">4</label>
+            <label><input type="radio" name="Rating" value="5">5</label>
+          </div>
+          <div class="ends"><span>1 = Poor</span><span>5 = Excellent</span></div>
+          <div class="err" id="e-rating" hidden>Please choose a rating.</div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Which topics were most useful for you?</legend>
+          <div class="hint">Tick all that apply.</div>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Clinical trials and phases">Clinical trials and phases</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="CRF and EDC">CRF and EDC</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Queries and data cleaning">Queries and data cleaning</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Coding and reconciliation">Coding and reconciliation</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Database lock">Database lock</label>
+          <label class="opt"><input type="checkbox" name="Most useful topics" value="Interview preparation">Interview preparation</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Was the teaching easy to understand?</legend>
+          <label class="opt"><input type="radio" name="Easy to understand" value="Very easy">Very easy</label>
+          <label class="opt"><input type="radio" name="Easy to understand" value="Mostly easy">Mostly easy</label>
+          <label class="opt"><input type="radio" name="Easy to understand" value="Sometimes difficult">Sometimes difficult</label>
+          <label class="opt"><input type="radio" name="Easy to understand" value="Difficult">Difficult</label>
+        </fieldset>
+
+        <div>
+          <label class="lbl" for="liked">What did you like most about the classes? <b>*</b></label>
+          <div class="hint">If you allow it below, this may be shown as your review on our website.</div>
+          <textarea id="liked" name="Liked most"></textarea>
+          <div class="err" id="e-liked" hidden>Please write a few words.</div>
+        </div>
+
+        <div>
+          <label class="lbl" for="improve">What should we improve?</label>
+          <div class="hint">This stays private.</div>
+          <textarea id="improve" name="Improve"></textarea>
+        </div>
+
+        <fieldset>
+          <legend>Would you recommend this course to a friend?</legend>
+          <label class="opt"><input type="radio" name="Recommend" value="Yes">Yes</label>
+          <label class="opt"><input type="radio" name="Recommend" value="Maybe">Maybe</label>
+          <label class="opt"><input type="radio" name="Recommend" value="No">No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Can we show your review on our website? <b>*</b></legend>
+          <label class="opt"><input type="radio" name="Website permission" value="Yes, with my first name and background">Yes, with my first name and background</label>
+          <label class="opt"><input type="radio" name="Website permission" value="Yes, without my name (Batch 1 student)">Yes, but without my name (shown as "Batch 1 student")</label>
+          <label class="opt"><input type="radio" name="Website permission" value="No, keep it private">No, keep my feedback private</label>
+          <div class="err" id="e-perm" hidden>Please choose one option.</div>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><input type="text" id="hp" tabindex="-1" autocomplete="off"></div>
+      </div>
+      <div class="foot">
+        <button type="submit" id="send">Submit feedback</button>
+        <span class="status" id="status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="thanks" id="thanks" hidden>
+      <h2>Thank you!</h2>
+      <p>Your feedback has been received. All the best for your CDM career.</p>
+    </div>
+  </form>
+  <footer>© 2026 Durga Sairam Tangella, CDM Learning Hub</footer>
+</div>
+<script>
+const ENDPOINT='https://formsubmit.co/ajax/cdmlearninghub@gmail.com';
+const f=document.getElementById('fb'), st=document.getElementById('status'), btn=document.getElementById('send');
+const val=n=>{const el=f.querySelector('input[name="'+n+'"]:checked');return el?el.value:'';};
+f.addEventListener('submit',async e=>{
+  e.preventDefault(); st.textContent='';
+  const name=document.getElementById('name').value.trim();
+  const liked=document.getElementById('liked').value.trim();
+  const checks=[['e-name',name.length>1],['e-rating',!!val('Rating')],['e-liked',liked.length>2],['e-perm',!!val('Website permission')]];
+  let ok=true; checks.forEach(([id,p])=>{document.getElementById(id).hidden=p; if(!p) ok=false;});
+  if(!ok){st.textContent='Please fill in the highlighted questions.';return;}
+  if(document.getElementById('hp').value) return;
+  const data={};
+  new FormData(f).forEach((v,k)=>{ data[k]= data[k] ? data[k]+', '+v : v; });
+  data._subject='Feedback from Batch 1 – '+data.Rating+'/5 – '+name;
+  data._template='table'; data._captcha='false';
+  btn.disabled=true; st.textContent='Sending…';
+  try{
+    const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+    const out=await r.json().catch(()=>({}));
+    if(!r.ok||String(out.success)!=='true') throw 0;
+    document.getElementById('fields').hidden=true; document.getElementById('thanks').hidden=false;
+  }catch(_){
+    btn.disabled=false; st.textContent='Could not send. Please try again in a minute, or email cdmlearninghub@gmail.com.';
+  }
+});
+</script>
+</body>
+</html>
