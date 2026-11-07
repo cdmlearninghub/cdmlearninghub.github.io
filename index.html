@@ -760,7 +760,7 @@ section.block{padding-block:clamp(56px,8vw,88px)}
         <details id="terms"><summary>Terms &amp; Conditions</summary><div class="pol">
           <p>By registering for or buying any CDM Learning Hub plan, you agree to these terms.</p>
           <h4>What we offer</h4>
-          <p>CDM Learning Hub offers independent online learning on Clinical Data Management (CDM) for beginners. Plans: CDM Notes (₹299), 4-Week Live Course (₹1,499) and Complete Bundle (₹1,999, includes 60 days of EDC Hands-on Lab access). Digital resources: CDM Starter Kit (₹599), Interview Q&amp;A e-book (₹149), Query Writing Kit (₹199), Hands-on Practice Pack (₹299) and Fresher Resume Kit (₹99). Practice tools: EDC Hands-on Lab (₹499, 60-day online access). Upskilling: DM Documents Workshop (fees shared on enquiry).</p>
+          <p>CDM Learning Hub offers independent online learning on Clinical Data Management (CDM) for beginners. Plans: CDM Notes (₹299), 4-Week Live Course (₹1,499) and Complete Bundle (₹1,999, includes 60 days of EDC Hands-on Lab access). Digital resources: CDM Starter Kit (₹599), Interview Q&amp;A e-book (₹149), Query Writing Kit (₹199), Hands-on Practice Pack (₹299) and Fresher Resume Kit (₹99). Practice tools: EDC Hands-on Lab (₹599, 60-day online access). Upskilling: DM Documents Workshop (fees shared on enquiry).</p>
           <h4>Educational purpose only</h4>
           <ul>
             <li>CDM Learning Hub is not an accredited institution, university or certification body.</li>
@@ -965,10 +965,10 @@ btn.addEventListener('click',()=>{
 
 // ---- Courses and kits (one list drives the course finder and the sign-up picker) ----
 const OFFERS=[
-  {k:'Complete Bundle (₹1,999)', n:'Complete Bundle', p:'₹1,999', was:'₹2,297', cat:'live', d:'4-Week Live Course, CDM Notes, hands-on EDC experience and a 1:1 mock interview', pts:['Four live weekly sessions with real-world examples','Hands-on EDC experience: 60 days in the EDC Hands-on Lab','Simple notes for all 4 weeks, with an interview question bank','A 1:1 mock interview with personal feedback']},
+  {k:'Complete Bundle (₹1,999)', n:'Complete Bundle', p:'₹1,999', was:'₹2,499', cat:'live', d:'4-Week Live Course, CDM Notes, hands-on EDC experience and a 1:1 mock interview', pts:['Four live weekly sessions with real-world examples','Hands-on EDC experience: 60 days in the EDC Hands-on Lab','Simple notes for all 4 weeks, with an interview question bank','A 1:1 mock interview with personal feedback']},
   {k:'4-Week Live Course (₹1,499)', n:'4-Week Live Course', p:'₹1,499', cat:'live', d:'Four live weekly sessions, from basics to database lock', pts:['The full CDM process, step by step','Practical examples and query-writing practice','Live Q&A with the trainer every week']},
   {k:'CDM Notes (₹299)', n:'CDM Notes', p:'₹299', cat:'self', d:'Simple notes for all 4 weeks, with a question bank'},
-  {k:'EDC Hands-on Lab (₹499)', n:'EDC Hands-on Lab', p:'₹499', cat:'self', d:'Practise in a working EDC: enter data, raise and resolve queries, build eCRFs. 60-day access', pts:['Enter data in a training EDC as a site user','Raise, answer, close and re-query queries as a Data Manager','Build an eCRF with edit checks and publish a new CRF version','10 guided exercises that check themselves']},
+  {k:'EDC Hands-on Lab (₹599)', n:'EDC Hands-on Lab', p:'₹599', cat:'self', d:'Practise in a working EDC: enter data, raise and resolve queries, build eCRFs. 60-day access', pts:['Enter data in a training EDC as a site user','Raise, answer, close and re-query queries as a Data Manager','Build an eCRF with edit checks and publish a new CRF version','10 guided exercises that check themselves']},
   {k:'CDM Starter Kit (₹599)', n:'CDM Starter Kit', p:'₹599', was:'₹799', cat:'self', d:'E-book, Query Writing Kit, Practice Pack and Resume Kit'},
   {k:'Interview Q&A e-book (₹149)', n:'Interview Q&A e-book', p:'₹149', cat:'self', d:'49 most-asked fresher questions with model answers'},
   {k:'Query Writing Kit (₹199)', n:'Query Writing Kit', p:'₹199', cat:'self', d:'40 ready query texts and the rules of a good query'},
@@ -979,9 +979,9 @@ const OFFERS=[
 ];
 const byKey=Object.fromEntries(OFFERS.map(o=>[o.k,o]));
 const PATHS={
-  fresher:{intro:'New to clinical research? Learn CDM from the basics and walk into interviews with confidence.', feat:'Complete Bundle (₹1,999)', badge:'Most popular with freshers', more:['4-Week Live Course (₹1,499)','EDC Hands-on Lab (₹499)','CDM Notes (₹299)','CDM Starter Kit (₹599)']},
-  switcher:{intro:'Coming from pharmacy, a lab, a hospital or another role? Learn the full CDM process and see how your experience fits.', feat:'4-Week Live Course (₹1,499)', badge:'Best place to start', more:['Complete Bundle (₹1,999)','EDC Hands-on Lab (₹499)','Interview Q&A e-book (₹149)','Hands-on Practice Pack (₹299)']},
-  working:{intro:'Already a CDA or CDC? Build the skills Data Managers are hired for.', feat:'DM Documents Workshop – enquiry', badge:'For working professionals', more:['CCDA Exam Prep – join waitlist (free)','EDC Hands-on Lab (₹499)','Query Writing Kit (₹199)']}
+  fresher:{intro:'New to clinical research? Learn CDM from the basics and walk into interviews with confidence.', feat:'Complete Bundle (₹1,999)', badge:'Most popular with freshers', more:['4-Week Live Course (₹1,499)','EDC Hands-on Lab (₹599)','CDM Notes (₹299)','CDM Starter Kit (₹599)']},
+  switcher:{intro:'Coming from pharmacy, a lab, a hospital or another role? Learn the full CDM process and see how your experience fits.', feat:'4-Week Live Course (₹1,499)', badge:'Best place to start', more:['Complete Bundle (₹1,999)','EDC Hands-on Lab (₹599)','Interview Q&A e-book (₹149)','Hands-on Practice Pack (₹299)']},
+  working:{intro:'Already a CDA or CDC? Build the skills Data Managers are hired for.', feat:'DM Documents Workshop – enquiry', badge:'For working professionals', more:['CCDA Exam Prep – join waitlist (free)','EDC Hands-on Lab (₹599)','Query Writing Kit (₹199)']}
 };
 const CAT_NAMES={live:'Live learning', self:'Self-study kits', up:'Upskill'};
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1049,7 +1049,7 @@ const PAY_LINKS={
   '4-Week Live Course (₹1,499)':'https://rzp.io/rzp/DpGjBBlE',
   'Complete Bundle (₹1,999)':'https://rzp.io/rzp/6k9ow7e',
   // Paste the Razorpay link for the lab here. Until then, students are told a payment link will be emailed.
-  'EDC Hands-on Lab (₹499)':'https://rzp.io/rzp/qgX6Iczk',
+  'EDC Hands-on Lab (₹599)':'https://rzp.io/rzp/qgX6Iczk',
   // Digital resources
   'CDM Starter Kit (₹599)':'https://rzp.io/rzp/j3eVVcm',
   'Interview Q&A e-book (₹149)':'https://rzp.io/rzp/m8XJBZ0',
