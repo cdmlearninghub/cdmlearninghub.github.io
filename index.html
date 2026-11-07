@@ -1093,7 +1093,7 @@ function autoReply(d){
 const FORM_ENDPOINT='https://formsubmit.co/ajax/cdmlearninghub@gmail.com';
 // Follow-up email for students who don't finish paying (Google Apps Script web app).
 // Paste your web-app URL between the quotes. Leave empty to switch it off.
-const FOLLOWUP_ENDPOINT='';
+const FOLLOWUP_ENDPOINT='https://script.google.com/macros/s/AKfycbyZG4GmbYOVOad24gVckcWklpTEpWbjaMMOIfvFmCAKM5N7HBHpMMFICVRGXqfsZnK4Cg/exec';
 const PAGE_OPENED=Date.now();
 function logForFollowUp(d){
   if(!FOLLOWUP_ENDPOINT) return;
