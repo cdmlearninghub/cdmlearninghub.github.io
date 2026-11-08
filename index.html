@@ -849,7 +849,7 @@ section.block{padding-block:clamp(56px,8vw,88px)}
     </div>
     <p>© 2026 Durga Sairam Tangella, CDM Learning Hub. All rights reserved. Course content may not be copied, shared or resold without written permission.</p>
     <p class="site-meta">
-      <span>Website last updated: 25 October 2026</span>
+      <span>Website last updated: <time id="lastUpdated">8 November 2026</time></span>
     </p>
   </div>
 </footer>
@@ -1164,6 +1164,14 @@ openFromHash();
 
 </script>
 <script data-goatcounter="https://cdmlearninghub.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-
+<script>
+(function () {
+  var d = new Date(document.lastModified);
+  var el = document.getElementById('lastUpdated');
+  if (el && !isNaN(d) && d.getFullYear() > 2020) {
+    el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+})();
+</script>
 </body>
 </html>
