@@ -1,0 +1,5 @@
+# CDM Learning Hub – instructions for search engines
+User-agent: *
+Allow: /
+
+Sitemap: https://cdmlearninghub.github.io/sitemap.xml
