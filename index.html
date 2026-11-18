@@ -68,8 +68,8 @@
    "@type": "Event",
    "name": "Free Query Workshop – how queries work in an EDC",
    "description": "A free 40-minute live online session: edit checks, the query lifecycle, writing good queries and a live EDC demo, with Q&A. For freshers in clinical data management.",
-   "startDate": "2026-11-22T11:00:00+05:30",
-   "endDate": "2026-11-22T11:40:00+05:30",
+   "startDate": "2026-11-21T11:00:00+05:30",
+   "endDate": "2026-11-21T11:40:00+05:30",
    "eventStatus": "https://schema.org/EventScheduled",
    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
    "location": {
@@ -780,7 +780,7 @@ section.block{padding-block:clamp(56px,8vw,88px)}
 <body style="margin:0">
 
 <div class="progress" id="progress" aria-hidden="true"></div>
-<div class="annc" role="note"><div class="wrap"><span class="pulse" aria-hidden="true"></span><b>Free Query Workshop · Sun 22 Nov, 11 am IST</b><span class="annc-sub">Batch 3 starts Sun 29 Nov</span><a href="#signup" data-choose="Free Query Workshop – Sun 22 Nov, 11 am IST">Register free <span aria-hidden="true">→</span></a></div></div>
+<div class="annc" role="note"><div class="wrap"><span class="pulse" aria-hidden="true"></span><b>Free Query Workshop · Sat 21 Nov, 11 am IST</b><span class="annc-sub">Batch 3 starts Sun 29 Nov</span><a href="#signup" data-choose="Free Query Workshop – Sun 22 Nov, 11 am IST">Register free <span aria-hidden="true">→</span></a></div></div>
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top"><i></i>CDM Learning Hub</a>
@@ -805,7 +805,7 @@ section.block{padding-block:clamp(56px,8vw,88px)}
         <p class="lead">Learn how clinical trial data is collected, checked, cleaned and locked, in four structured weekly sessions with practical examples. Built for freshers and anyone starting out in clinical research.</p>
         <div class="cta-row">
           <a class="btn primary shine" href="#signup">Join Batch 3 <span class="arr">→</span></a>
-          <a class="btn ghost" href="#signup" data-choose="Free Query Workshop – Sun 22 Nov, 11 am IST">Free workshop · 22 Nov</a>
+          <a class="btn ghost" href="#signup" data-choose="Free Query Workshop – Sun 22 Nov, 11 am IST">Free workshop · 21 Nov</a>
           <a class="play-link" href="#demo"><span class="play" aria-hidden="true">▶</span> See CDM in action</a>
         </div>
         <ul class="stats" aria-label="At a glance">
@@ -1210,7 +1210,7 @@ section.block{padding-block:clamp(56px,8vw,88px)}
     </div>
   </section>
 </main>
-<div class="mcta" id="mcta" aria-hidden="true"><div><b>Batch 3 · 29 Nov</b><span>Free workshop 22 Nov</span></div><a class="btn primary" href="#signup" tabindex="-1">Join now <span class="arr">→</span></a></div>
+<div class="mcta" id="mcta" aria-hidden="true"><div><b>Batch 3 · 29 Nov</b><span>Free workshop 21 Nov</span></div><a class="btn primary" href="#signup" tabindex="-1">Join now <span class="arr">→</span></a></div>
 
 <footer>
   <div class="wrap">
@@ -1419,7 +1419,7 @@ function showPay(data, sent){
     payBox.hidden=true;
     document.getElementById('doneTitle').textContent= sent ? 'You\u2019re registered!' : 'Something went wrong';
     document.getElementById('doneText').textContent= sent
-      ? 'Thanks, '+first+'. See you at the Free Query Workshop on Sunday 22 November, 11:00 am IST. We\u2019ll email the Microsoft Teams link to '+data.email+' and send a reminder before we start.'
+      ? 'Thanks, '+first+'. See you at the Free Query Workshop on Saturday 21 November, 11:00 am IST. We\u2019ll email the Microsoft Teams link to '+data.email+' and send a reminder before we start.'
       : 'We couldn\u2019t save your details just now. Please try again in a minute, or email cdmlearninghub@gmail.com.';
   } else if(/waitlist|enquiry/i.test(data.Plan)){
     payBox.hidden=true;
@@ -1448,7 +1448,7 @@ function showPay(data, sent){
 function autoReply(d){
   const first=d.Name.split(' ')[0], link=PAY_LINKS[d.Plan];
   let next;
-  if(/Free Query Workshop/.test(d.Plan)) next='You are registered for the Free Query Workshop on Sunday 22 November 2026, 11:00–11:40 am IST (on Microsoft Teams). We will email the joining link and a reminder before the session.';
+  if(/Free Query Workshop/.test(d.Plan)) next='You are registered for the Free Query Workshop on Saturday 21 November 2026, 11:00–11:40 am IST (on Microsoft Teams). We will email the joining link and a reminder before the session.';
   else if(/waitlist/i.test(d.Plan)) next='You are on the waitlist. We will email you as soon as CCDA Exam Prep opens, with dates and fees.';
   else if(/enquiry/i.test(d.Plan)) next='We will email you about the next DM Documents Workshop batch, with dates and fees.';
   else if(link) next='If you have not paid yet, you can complete your payment here: '+link+'\n\nOnce your payment is received, we will send your course details by email and WhatsApp within 24 hours.';
